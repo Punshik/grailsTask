@@ -3,11 +3,13 @@ package helloworld
 class UrlMappings {
 
     static mappings = {
-        "/$controller/$action?/$id?(.$format)?"{
-            constraints {
-                // apply constraints here
-            }
+        
+        group "/item", {
+            "/list"(controller: "item", action: "showList")
+            "/search"(controller: "item", action: "search")
+            "/view/$id"(controller: "item", action: "showId")
         }
+
 
         "/"(view:"/index")
         "500"(view:'/error')
