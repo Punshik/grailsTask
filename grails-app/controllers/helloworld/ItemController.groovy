@@ -2,18 +2,26 @@ package helloworld
 
 class ItemController {
     static responseFormats = ['json', 'html']
-    def itemService    
+
+    def itemService
 
     def showList() { 
        def items = itemService.getAll()
-       respond items.properties
+       respond items
     }
 
-    def search() { 
-        respond([id : params.id, name : params.name])
+    def search(String query) { 
+        def response = itemService.findByQuery(query)
+        respond response
     }
 
-    def showId() { 
-        render params.id
+    def searchById() { 
+        def matchById = itemService.findById(Long.parseLong(params.id,10))
+        if(!matchById){
+            response.status = 404
+        }
+        else{
+            respond matchById
+        }
     }
 }

@@ -7,7 +7,7 @@ class UrlMappings {
         group "/item", {
             "/list"(controller: "item", action: "showList")
             "/search"(controller: "item", action: "search")
-            "/view/$id"(controller: "item", action: "showId")
+            "/view/$id"(controller: "item", action: "searchById")
         }
 
 
