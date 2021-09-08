@@ -1,17 +1,18 @@
 package helloworld
 
+// import grails.persistence.*
+import java.util.UUID
+
+// @Entity
 class Item {
     long id
     String name
     float cost
     String description
 
-    public Item(long id, String name, float cost, String description){
-        this.id = id
-        this.name = name
-        this.cost = cost
-        this.description = description
-    }
-
     static constraints = {}
+
+    static mapping = {
+        version false
+    }
 }

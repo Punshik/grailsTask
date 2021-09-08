@@ -3,11 +3,9 @@ package helloworld
 class ItemController {
     static responseFormats = ['json', 'html']
 
-    def itemService
-
+    // def itemService
     def showList() { 
-       def items = itemService.getAll()
-       respond items
+        render 'done'
     }
 
     def search(String query) { 
