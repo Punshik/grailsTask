@@ -8,8 +8,6 @@ class UrlMappings {
             "/list"(controller: "item", action: "showList")
             "/search"(controller: "item", action: "search")
             "/view/$id"(controller: "item", action: "searchById")
-            "/remove"(controller: "item", action: "removeItem")
-            "/manage"(controller: "item", action: "manageItem")
         }
 
 

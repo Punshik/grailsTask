@@ -24,18 +24,4 @@ class ItemController {
             respond matchById
         }
     }
-
-    def removeItem(Long id) {
-        itemService.removeItem(id)
-        render 'deleted'
-    }
-
-    def manageItem() {
-        if(params.id){
-            itemService.editItem(Long.parseLong(params.id), params.name ,Float.parseFloat(params.cost), params.description)
-        }
-        else {
-            itemService.setItem(params.name, Float.parseFloat(params.cost), params.description)
-        }
-    }
 }

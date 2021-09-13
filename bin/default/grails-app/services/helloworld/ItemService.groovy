@@ -30,18 +30,5 @@ class ItemService {
     def findById(Long id) {
         return Item.findById(id)
     }
-
-    def removeItem(Long id) {
-        def removingItem = Item.get(id)
-        removingItem.delete()
-    }
-
-    def editItem(Long id, String nameValue, Float costValue, String descriptionValue){
-        def editingItem = Item.get(id)
-        editingItem.name = nameValue
-        editingItem.cost = costValue
-        editingItem.description = descriptionValue
-        editingItem.save()
-    }
 }
 
